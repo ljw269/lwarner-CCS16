@@ -1,68 +1,70 @@
 function setup() {
   createCanvas(400,400);
 }
-var canvasWidth; 
-canvasWidth = 400
+var canvasFull; 
+canvasFull = 400
+
+
 function draw () {
   background(160);
   noFill()
   stroke(255,0,0);
-  curve(1,50,0,26,canvasWidth,50,73,50);
+  curve(1,50,0,26,canvasFull,50,73,50);
   stroke(60,150,255);
-  curve(canvasWidth,10,0,26,canvasWidth,55,73,50);
+  curve(canvasFull,10,0,26,canvasFull,55,73,50);
   stroke(200,200,0);
-  curve(50,50,0,100,canvasWidth,300,80,100);
+  curve(50,50,0,100,canvasFull,300,80,100);
   stroke(140,0,255);
   strokeWeight(10);
-  curve(100,100,0,200,canvasWidth,320,80,100);
+  curve(100,100,0,200,canvasFull,320,80,100);
   stroke(140,0,255);
-  curve(100,150,0,220,canvasWidth,200,90,200);
+  curve(100,150,0,220,canvasFull,200,90,200);
   stroke(255,0,0);
-  curve(0,canvasWidth,0,320,canvasWidth,180,90,150);
+  curve(0,canvasFull,0,320,canvasFull,180,90,150);
   stroke(60,150,255);
-  curve(canvasWidth,0,0,320,canvasWidth,189,91,155);
+  curve(canvasFull,0,0,320,canvasFull,189,91,155);
   stroke(200,200,0);
-  curve(canvasWidth,0,0,canvasWidth,canvasWidth,250,100,200);
+  curve(canvasFull,0,0,canvasFull,canvasFull,250,100,200);
   stroke(60,150,255);
-  curve(0,80,0,120,canvasWidth,20,90,75);
+  curve(0,80,0,120,canvasFull,20,90,75);
   stroke(60,150,255);
-  curve(canvasWidth,0,0,canvasWidth,canvasWidth,300,50,100);
+  curve(canvasFull,0,0,canvasFull,canvasFull,300,50,100);
   stroke(200,200,0);
-  curve(0,300,0,canvasWidth,canvasWidth,300,canvasWidth,canvasWidth);
+  curve(0,300,0,canvasFull,canvasFull,300,canvasFull,canvasFull);
   stroke(255,0,0);
-  curve(200,0,200,0,canvasWidth,60,90,180);
-  curve(50,0,50,0,canvasWidth,100,200,300);
+  curve(200,0,200,0,canvasFull,60,90,180);
+  curve(50,0,50,0,canvasFull,100,200,300);
   stroke(140,0,255);
-  curve(0,canvasWidth,0,canvasWidth,canvasWidth,180,canvasWidth,canvasWidth);
-  curve(150,0,0,100,canvasWidth,90,300,200);
-  curve(150,150,0,0,100,canvasWidth,100,200);
-  curve(150,200,300,0,40,canvasWidth,200,100);
+  curve(0,canvasFull,0,canvasFull,canvasFull,180,canvasFull,canvasFull);
+  curve(150,0,0,100,canvasFull,90,300,200);
+  curve(150,150,0,0,100,canvasFull,100,200);
+  curve(150,200,300,0,40,canvasFull,200,100);
   stroke(200,200,0)
-  curve(100,100,0,0,100,canvasWidth,300,200);
-  curve(0,300,0,100,canvasWidth,90,100,200);
-  curve(100,0,0,canvasWidth,canvasWidth,90,200,300);
-  curve(300,0,0,300,canvasWidth,300,canvasWidth,0)
+  curve(100,100,0,0,100,canvasFull,300,200);
+  curve(0,300,0,100,canvasFull,90,100,200);
+  curve(100,0,0,canvasFull,canvasFull,90,200,300);
+  curve(300,0,0,300,canvasFull,300,canvasFull,0)
   stroke(60,150,255);
-  curve(300,0,0,200,canvasWidth,200,100,0);
-  curve(canvasWidth,0,0,100,canvasWidth,100,200,0);
-  curve(0,canvasWidth,0,200,canvasWidth,200,100,0);
-  curve(100,0,100,0,canvasWidth,200,300,0);
-  curve(25,0,25,0,canvasWidth,canvasWidth,100,300,0);
-  curve(0,100,0,100,canvasWidth,300,100,300,0)
-  curve(0,200,0,200,200,canvasWidth,300,0);
+  curve(300,0,0,200,canvasFull,200,100,0);
+  curve(canvasFull,0,0,100,canvasFull,100,200,0);
+  curve(0,canvasFull,0,200,canvasFull,200,100,0);
+  curve(100,0,100,0,canvasFull,200,300,0);
+  curve(25,0,25,0,canvasFull,canvasFull,100,300,0);
+  curve(0,100,0,100,canvasFull,300,100,300,0)
+  curve(0,200,0,200,200,canvasFull,300,0);
   stroke(255,0,0);
-  curve(0,0,0,0,canvasWidth,200,180,-350);
-  curve(0,0,0,100,canvasWidth,300,180,-350);
-  curve(0,0,0,200,canvasWidth,canvasWidth,200,-350);
-  curve(0,0,0,350,100,canvasWidth,200,-350);
+  curve(0,0,0,0,canvasFull,200,180,-350);
+  curve(0,0,0,100,canvasFull,300,180,-350);
+  curve(0,0,0,200,canvasFull,canvasFull,200,-350);
+  curve(0,0,0,350,100,canvasFull,200,-350);
   stroke(140,0,255)
   curve(-300,-350,0,100,100,0,-200,0);
   curve(-300,-350,0,200,200,0,-200,0);
   curve(-300,-350,0,300,350,0,-150,100);
-  curve(-300,-350,100,canvasWidth,canvasWidth,300,-200,0);
-  curve(-300,350,200,canvasWidth,400,250,100,0);
+  curve(-300,-350,100,canvasFull,canvasFull,300,-200,0);
+  curve(-300,350,200,canvasFull,400,250,100,0);
   stroke(200,200,0);
-  curve(350,0,100,0,canvasWidth,200,200,-350);
-  curve(350,0,0,0,canvasWidth,300,200,-350);
-  curve(-350,0,0,300,200,canvasWidth,200,-350);
+  curve(350,0,100,0,canvasFull,200,200,-350);
+  curve(350,0,0,0,canvasFull,300,200,-350);
+  curve(-350,0,0,300,200,canvasFull,200,-350);
 }
