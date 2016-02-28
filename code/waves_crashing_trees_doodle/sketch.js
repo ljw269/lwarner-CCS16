@@ -6,7 +6,7 @@ function setup() {
 function draw() {
   background(0);
   strokeWeight(4);
-  stroke(255);
+  
   
   for(var x = 0; x <= mouseX; x += 50) {
     for(var y = 0; y <= height; y +=50) {
@@ -15,7 +15,7 @@ function draw() {
     
       
   if(mouseX >=0 && mouseY >=0 === true) {
-  fill(random(25),100,random(150));
+  fill(random(50),50,random(200));
   triangle(x, y, x - 50, y + 75, x + 50, y + 75);
   rect(x, y, x + 95, y + 95, x + 95, y + 95);
       }
