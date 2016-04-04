@@ -11,6 +11,7 @@ function setup() {
   createCanvas(400,400);
   //renders the contents of our lines array
   
-  startsWith(CHAPTER I);
+  //startsWith(CHAPTER I);
   text(lines, 0,0,width,height);
+  replaceAll(the,dog);
 }
