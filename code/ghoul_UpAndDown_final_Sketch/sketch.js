@@ -1,62 +1,68 @@
-var button1;
-var button2;
-//var ghoul;
-var ghouls = [];
+var ghoul1;
+var button_presses = 0
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  //var ghoul = new Ghoul(200, 200, random(255), 1.0); //4 parameters
-  
-  button1 = createButton("ghoul!");
+  createCanvas(windowWidth,windowHeight);
+  ghoul1 = new Ghoul(windowWidth/2, windowHeight/2, random(160,220), 4.0, 3.0);
+  //print(ghoul1);
+  button1 = createButton("Move Faster!");
   button1.position(0,0);
   button1.mouseClicked(function() {
-    var g = new Ghoul(random(0,windowWidth), random(0,windowHeight), random(160,220), random(.75,3.0));
-    ghouls.push(g);
-    //console.log("new Ghoul : %o", g)
-    //print(g);
-    //print(windowWidth,windowHeight);
-  
-  
-  
+    button_presses = button_presses + 1;
+    
   })
+  button2 = createButton("Slow Down!");
+  button2.position(100,0);
+  button2.mouseClicked(function(){
+    button_presses = button_presses - 1
+    
+  })
+  
 }
+
+function ghoulScale() {
+  return ((button_presses % 3) + 1);
+}
+
+//function ghoulScale2(){
+ // return ((button_presses % 3) - 1);
+//}
 
 function draw() {
   background(204);
-  //fill(particle.color);
-  //noStroke();
-  //ellipse(particle.pos.x,particle.pos.y, 100, 100);
-  for (var i = 0; i < ghouls.length; i++){
-    ghouls [i].display();
-    //noLoop();
-  }
-  
-
+  //ghoul1();
+  ghoul1.display();
+  ghoul1.bounce();
   
 }
+  
 
-function Ghoul(x, y, _hue, _scale) {
+function Ghoul(x, y, _hue, _scale, speed){
+  this.speed = 1.0;
+  this.y = y
+  this._hue = _hue;
+  this._scale = _scale;
+  this.x = x;
 
-this.x = x;
-this.y = y;
-this._hue = _hue;
-this._scale = _scale;
-
-//in constructor, just set properties
 }
+
 Ghoul.prototype = {
   
   constructor : Ghoul,
-  display : function () {
   
-  //println(this.x, this.y);
+  bounce : function(){
+    
+    
+    if (this.y > windowHeight || this.y < 0){
+      this.speed *= -1;
+    }
+    
+    this.y = this.y + this.speed * button_presses;
+  },
   
-  //translate(this.x, this.y);
-  push();
+  display : function(){
   
-  scale(this._scale);
   stroke(this._hue);
-  
   
   
   noStroke();
@@ -89,7 +95,7 @@ Ghoul.prototype = {
   line(this.x+6,this.y-12, this.x+30,this.y-15);
 
   stroke(0);
-  line(this.x-6,this.y-12, this.x-30,this.y-15);
+  line(this.x-6,this.y-12, this.x-30,this.y-15)
   //curve(this.x+295, this.y+189, this.x+305, this.y+189, this.x+315, this.y+190, this.x+310, this.y+195);
 
   //eyebrows
@@ -111,10 +117,10 @@ Ghoul.prototype = {
 
   
   fill(0);
-  ellipse(this.x,this.y-25, 70, 10);
+  ellipse(this.x,this.y-25, 70, 10)
 
   fill(0);
-  rect(this.x-20, this.y-65, 40, 40);
+  rect(this.x-20, this.y-65, 40, 40)
 
   //hat
 
@@ -127,7 +133,23 @@ Ghoul.prototype = {
   //ears
     
   }
+ 
     
   
+    
   
-};
+}
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

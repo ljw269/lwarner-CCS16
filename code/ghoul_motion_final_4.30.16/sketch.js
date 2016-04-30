@@ -39,13 +39,11 @@ function draw() {
 
 function Ghoul(x, y, _hue, _scale, speed){
   this.speed = 1.0;
-  //this.name = "ghoul1";
-  //this.color = color(186, random(160,220), 190);
   this.y = y
   this._hue = _hue;
   this._scale = _scale;
   this.x = x;
-  //this.y = y;
+
 }
 
 Ghoul.prototype = {
