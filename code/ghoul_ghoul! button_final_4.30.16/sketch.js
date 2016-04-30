@@ -32,7 +32,7 @@ function draw() {
   }
   
 
-  //particle.bounce();
+  
 }
 
 function Ghoul(x, y, _hue, _scale) {
@@ -62,66 +62,66 @@ Ghoul.prototype = {
   noStroke();
   fill(186, this._hue, 180);
   ellipse(this.x,this.y, 60, 65);
-
-  //head
+  
+  noStroke();
+  fill(255);
+  ellipse(this.x-8,this.y-8, 7, 8);
 
   noStroke();
   fill(255);
-  ellipse(this.x+290,this.y+195, 7, 8);
-
-  noStroke();
-  fill(255);
-  ellipse(this.x+310, this.y+195, 7, 8);
+  ellipse(this.x+11, this.y-8, 7, 8);
 
   // eye whites
 
 
   noStroke();
   fill(0);
-  ellipse(this.x+290,this.y+196, 3, 4);
+  ellipse(this.x-8,this.y-6, 4, 4);
 
   noStroke();
   fill(0);
-  ellipse(this.x+310,this.y+196, 3, 4);
+  ellipse(this.x+11,this.y-6, 4, 4);
 
   //pupils
 
   stroke(0);
-  curve(this.x+275, this.y+190, this.x+285, this.y+185, this.x+295, this.y+190, this.x+300, this.y+190);
+  //curve(this.x+8, this.y-10, this.x+30, this.y-5, this.x+20, this.y-15, this.x+2, this.y+20);
+  line(this.x+6,this.y-12, this.x+30,this.y-15);
 
   stroke(0);
-  curve(this.x+295, this.y+189, this.x+305, this.y+189, this.x+315, this.y+190, this.x+310, this.y+195);
+  line(this.x-6,this.y-12, this.x-30,this.y-15)
+  //curve(this.x+295, this.y+189, this.x+305, this.y+189, this.x+315, this.y+190, this.x+310, this.y+195);
 
   //eyebrows
 
 
   fill(0);
   noStroke();
-  arc(this.x+300,this.y+210, 25, 25, 0, PI, HALF_PI + PI);
+  arc(this.x,this.y+10, 25, 25, 0, PI, HALF_PI + PI);
 
   //mouth
 
   fill(255);
-  rect(this.x+302, this.y+211, 3, 5);
+  rect(this.x+2, this.y+11, 3, 5);
 
   fill(255);
-  rect(this.x+295, this.y+211, 3, 4);
+  rect(this.x-5, this.y+11, 3, 4);
 
   //teeth
 
   
   fill(0);
-  ellipse(this.x+300,this.y+176, 70, 10)
+  ellipse(this.x,this.y-25, 70, 10)
 
   fill(0);
-  rect(this.x+280, this.y+136, 40, 40)
+  rect(this.x-20, this.y-65, 40, 40)
 
   //hat
 
 
   fill(186, this._hue, 180);
-  triangle(this.x+260, this.y+175, this.x+283, this.y+183, this.x+272, this.y+185);
-  triangle(this.x+345, this.y+178, this.x+320, this.y+180, this.x+325, this.y+185);
+  triangle(this.x+12, this.y-18, this.x+35, this.y-22, this.x+22, this.y+8);
+  triangle(this.x-12, this.y-10, this.x-35, this.y-25, this.x-20, this.y+18);
 
   pop();
   //ears
@@ -131,12 +131,3 @@ Ghoul.prototype = {
   
   
 };
-
- 
-  
-
-
-
-
-
-
