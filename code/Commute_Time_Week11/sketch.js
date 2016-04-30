@@ -28,7 +28,7 @@ function draw(){
 
     
     push();
-    rect(0, 0, 40, timeWorkAvg[i] * 5.0);
+    rect(0, 0, -40, timeWorkAvg[i] * 5.0);
    
     pop();
 

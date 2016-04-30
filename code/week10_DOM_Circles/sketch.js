@@ -3,8 +3,9 @@ var button1;
 var button2;
 var button3;
 var circleColor;
-var slider
-var changecircleStroke
+var slider;
+var changecircleStroke;
+var val;
 
 
 function setup() {
@@ -15,10 +16,10 @@ function setup() {
   bgcolor = color(200);
   circleColor = color(255);
   changecircleStroke = color(0,0,100);
-  //button1 = createButton("change background");
+  button1 = createButton("change background");
   button2 = createButton("change circle color");
   //button3 = createButton("add circles")
-  //button1.mousePressed(changebgColor);
+  button1.mousePressed(changebgColor);
   button2.mousePressed(changecircleColor);
 
   //button1.position(width/3, height/2);
@@ -27,13 +28,11 @@ function setup() {
   button3.position(150,10);
   
   
-  slider = createSlider(80, 160, 0);
+  slider = createSlider(80, 160, 120);
   slider.position(10,10);
   slider.style('width', '100px');
- 
- 
-  
 }
+
 
 function changebgColor() {
   bgcolor = color(140, random(50,80), random(60,75));
@@ -58,14 +57,20 @@ function changeBorder() {
 
 function draw() {
   
-  var val = slider.value();
+  if (val != slider.value()){
+    //bgcolor = slider.value();
+    bgcolor = color(slider.value(), 200, 100);
+    val = slider.value();
+  }
+  
+  
   
   
  //if button1.mousePressed === true){
   
-  //background(bgcolor)
+  background(bgcolor)
  // } else {
-  background(val, (20,80), (50,80));
+  //background(val, (20,80), (50,80));
   //}
   
   for(var x = 0; x <=width; x += 50){
