@@ -1,8 +1,14 @@
 var ghoul1;
 var button_presses = 0
+var img;
+
+function preload(){
+  img = loadImage('lunapark.png');
+}
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  frameRate(60);
   ghoul1 = new Ghoul(windowWidth/2, windowHeight/2, random(160,220), 4.0, 3.0);
   //print(ghoul1);
   button1 = createButton("Move Faster!");
@@ -21,7 +27,7 @@ function setup() {
 }
 
 function ghoulScale() {
-  return ((button_presses % 3) + 1);
+  return ((button_presses % 3) + 1.0);
 }
 
 //function ghoulScale2(){
@@ -29,7 +35,7 @@ function ghoulScale() {
 //}
 
 function draw() {
-  background(204);
+  background(img);
   //ghoul1();
   ghoul1.display();
   ghoul1.bounce();
@@ -117,10 +123,10 @@ Ghoul.prototype = {
   //teeth
 
   
-  fill(0);
+  fill(30,40,30);
   ellipse(this.x,this.y-25, 70, 10)
 
-  fill(0);
+  fill(30,40,30);
   rect(this.x-20, this.y-65, 40, 40)
 
   //hat

@@ -1,10 +1,14 @@
 var ghoul1;
-var button_presses = 0
+var button_presses = 0;
+var sunset = "grey";
+
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  
   ghoul1 = new Ghoul(windowWidth/2, windowHeight/2, random(160,220), 4.0, 3.0);
   //print(ghoul1);
+  
   button1 = createButton("Move Faster!");
   button1.position(0,0);
   button1.mouseClicked(function() {
@@ -18,18 +22,33 @@ function setup() {
     
   })
   
+  button3 = createButton("Sunset");
+  button3.position(200,0);
+  button3.mousePressed(
+    
+    function(){
+      sunset = function() {
+      for(var x = 0; x <= width; x += 50){
+        fill(0);
+        beginShape(TRIANGLES);
+        vertex(x,y);
+        vertex(x - 40, y + 30);
+        vertex(x + 40, y + 30);
+        endShape(CLOSE);
+        }
+      }
+    
+  })
 }
 
 function ghoulScale() {
   return ((button_presses % 3) + 1);
 }
 
-//function ghoulScale2(){
- // return ((button_presses % 3) - 1);
-//}
+
 
 function draw() {
-  background(204);
+  background(sunset);
   //ghoul1();
   ghoul1.display();
   ghoul1.bounce();
@@ -140,16 +159,3 @@ Ghoul.prototype = {
   
 }
 
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
