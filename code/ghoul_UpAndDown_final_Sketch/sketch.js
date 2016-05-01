@@ -1,11 +1,12 @@
 var ghoul1;
 var button_presses = 0;
-var sunset = "grey";
+var sunset;
 
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
   
+  //frameRate(75);
   ghoul1 = new Ghoul(windowWidth/2, windowHeight/2, random(160,220), 4.0, 3.0);
   //print(ghoul1);
   
@@ -22,24 +23,24 @@ function setup() {
     
   })
   
-  button3 = createButton("Sunset");
-  button3.position(200,0);
-  button3.mousePressed(
+  
+
+}  
+  //button3 = createButton("Sunset");
+  //button3.position(200,0);
+  //button3.mousePressed(
     
-    function(){
-      sunset = function() {
-      for(var x = 0; x <= width; x += 50){
-        fill(0);
-        beginShape(TRIANGLES);
-        vertex(x,y);
-        vertex(x - 40, y + 30);
-        vertex(x + 40, y + 30);
-        endShape(CLOSE);
-        }
-      }
+    //function() {
+      //sunset = function(){
+        
+      //}
+    //}
+      
+        
+      
     
-  })
-}
+  //})
+
 
 function ghoulScale() {
   return ((button_presses % 3) + 1);
@@ -48,7 +49,8 @@ function ghoulScale() {
 
 
 function draw() {
-  background(sunset);
+  background(155, 60, 70);
+  sunset();
   //ghoul1();
   ghoul1.display();
   ghoul1.bounce();
@@ -154,8 +156,25 @@ Ghoul.prototype = {
   }
  
     
+}
+
+function sunset() {
   
-    
+   for(var x = 0; x <= width; x += 50){
+    for(var y = 0; y <= height; y +=50){
+      
+  fill(0);
+  beginShape(TRIANGLES);
+  vertex(x,y);
+  vertex(x - 40, y + 30);
+  vertex(x + 40, y + 30);
+  endShape(CLOSE);
   
+  stroke(100,100,0);
+  strokeJoin(ROUND);
+  fill(random(170,200), random(130,160), random(0,10));
+  ellipse(x + 17.5, y + 55 , 25, 25);
+    }
+  }
 }
 

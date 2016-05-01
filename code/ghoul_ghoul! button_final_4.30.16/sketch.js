@@ -5,7 +5,11 @@ var ghouls = [];
 var hSlider;
 var sSlider;
 var bSlider;
+var img;
 
+function preload(){
+  img = loadImage('wall.png');
+}
 function setup() {
   createCanvas(windowWidth, windowHeight);
   //var ghoul = new Ghoul(200, 200, random(255), 1.0); //4 parameters
@@ -34,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-  background(107,0,65);
+  background(img);
   
   
   var h = hSlider.value();

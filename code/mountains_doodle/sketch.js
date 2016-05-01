@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(600,400);
   frameRate(12)
-  background(random(140,200), random(55, 70), random(60,80));
+  //background(random(140,200), random(55, 70), random(60,80));
   
 }
 
